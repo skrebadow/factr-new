@@ -1,0 +1,12 @@
+# Preserve exact package, provenance and captured-evidence bytes across checkouts.
+factr/plugin.json -text
+factr/.codex-plugin/plugin.json -text
+factr/version.json -text
+factr/core-provenance.json -text
+factr/capability-provenance.json -text
+factr/skills/factr/** -text
+factr/assets/** -text
+docs/migration/** -text
+evaluation/** -text
+version.json -text
+RELEASE_NOTES.md -text

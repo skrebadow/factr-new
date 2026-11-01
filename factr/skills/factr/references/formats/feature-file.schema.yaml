@@ -1,0 +1,104 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "FACTR Gherkin Feature File Presentation"
+description: "Optional presentation model adapted from the pinned legacy RENDER schema. Direct file writing requires no intermediate model or approval state."
+type: object
+additionalProperties: false
+required: [feature_name, scenarios]
+properties:
+  feature_name:
+    type: string
+    minLength: 1
+  feature_tags:
+    $ref: "#/$defs/tags"
+  feature_description:
+    type: string
+    description: "Feature narrative or capability context."
+  test_user_story_docstring:
+    type: string
+    description: "Optional supplied Test User Story narrative; no upstream story is required."
+  source_snapshot_ref:
+    type: string
+  evidence_surface_tags:
+    type: array
+    uniqueItems: true
+    items:
+      type: string
+      minLength: 1
+    description: "Optional observation-surface labels, rendered as a comment."
+  background:
+    $ref: "#/$defs/steps"
+  scenarios:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      additionalProperties: false
+      required: [scenario_name, steps]
+      properties:
+        kind:
+          type: string
+          enum: [scenario, outline]
+          default: scenario
+        scenario_name:
+          type: string
+          minLength: 1
+        scenario_tags:
+          $ref: "#/$defs/tags"
+        description:
+          type: string
+          description: "Case context or unresolved execution details."
+        behavior_comment:
+          type: string
+          description: "Testable behavior statements displayed as comments; replaces legacy fact_comment."
+        preconditions_comment:
+          type: string
+        steps:
+          $ref: "#/$defs/steps"
+        examples:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            additionalProperties: false
+            required: [rows]
+            properties:
+              name:
+                type: string
+              tags:
+                $ref: "#/$defs/tags"
+              rows:
+                type: array
+                minItems: 2
+                description: "Header row followed by one or more data rows."
+                items:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: string
+      allOf:
+        - if:
+            properties:
+              kind:
+                const: outline
+            required: [kind]
+          then:
+            required: [examples]
+  metadata:
+    type: object
+    additionalProperties: true
+$defs:
+  tags:
+    type: array
+    uniqueItems: true
+    items:
+      type: string
+      minLength: 1
+      pattern: '^[^\s@]+$'
+    description: "Tag values without the leading @. Other source locators can remain in comments."
+  steps:
+    type: array
+    minItems: 1
+    items:
+      type: string
+      minLength: 1
+    description: "Gherkin steps, including attached Doc Strings or data tables where needed. Final syntax is checked by a Gherkin parser."

@@ -1,0 +1,20 @@
+{
+  "name": "factr-marketplace",
+  "interface": {
+    "displayName": "FACTR"
+  },
+  "plugins": [
+    {
+      "name": "factr",
+      "source": {
+        "source": "local",
+        "path": "./factr"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

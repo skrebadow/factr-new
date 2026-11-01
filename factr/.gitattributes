@@ -1,0 +1,15 @@
+# Preserve exact Core bytes and the hashed capability adaptations across checkouts.
+skills/factr/references/core/** -text
+skills/factr/references/assertions.md -text
+skills/factr/references/understanding.md -text
+skills/factr/references/decomposition.md -text
+skills/factr/references/shaping.md -text
+skills/factr/references/planning.md -text
+skills/factr/references/test-design.md -text
+skills/factr/references/discovery.md -text
+skills/factr/references/rendering.md -text
+skills/factr/references/traceability.md -text
+skills/factr/references/formats/manual-test-table.md -text
+skills/factr/references/formats/feature-file.schema.yaml -text
+assets/templates/feature-file.feature -text
+skills/factr/references/formats/feature-file.md -text

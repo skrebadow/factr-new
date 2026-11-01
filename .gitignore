@@ -1,0 +1,12 @@
+# Python bytecode and test caches
+# Generated FACTR artifacts stay local
+artifacts/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+pytest-cache-files-*/
+
+# Python tooling caches
+.mypy_cache/
+.ruff_cache/

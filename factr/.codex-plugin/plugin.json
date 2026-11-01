@@ -1,0 +1,25 @@
+{
+  "name": "factr",
+  "version": "1.10.1+codex.20261029143531",
+  "description": "FACTR behavioral reasoning, backlog refinement, tests, supported automation and traceability with revision impact.",
+  "author": {
+    "name": "Rebadow, Shauna-Kay"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "FACTR",
+    "shortDescription": "Reason about behavior and design falsifiable tests.",
+    "longDescription": "Understand source meaning, derive assertions, decompose scope, refine backlog items, assess planning and shared risk, design actionable cases and resolve missing details. Render reusable Gherkin or supported automation with target preferences and explicit delivery checks. Map source and evidence coverage, expose gaps, and assess dependent outputs after revisions. Reused guidance records exact source and adaptation provenance. Present manual cases as Markdown tables and save Gherkin .feature files when requested. Prefer Given/When/Then for tests, with numbered steps available for illustrations.",
+    "developerName": "Rebadow, Shauna-Kay (US) - MN",
+    "category": "Productivity",
+    "capabilities": [],
+    "brandColor": "#3B6FD8",
+    "composerIcon": "./assets/factr-icon.png",
+    "logo": "./assets/factr-icon.png",
+    "defaultPrompt": [
+      "Use FACTR to decompose these notes into coherent capability slices.",
+      "Use FACTR to refine this feature into concrete acceptance criteria.",
+      "Use FACTR to identify procedure gaps and design an actionable test from this context."
+    ]
+  }
+}

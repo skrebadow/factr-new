@@ -1,0 +1,4 @@
+interface:
+  display_name: "FACTR"
+  short_description: "Reason about behavior and design falsifiable tests."
+  default_prompt: "Use $factr to design a concrete test case from this behavior, keeping assumptions visible."
