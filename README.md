@@ -76,7 +76,7 @@ The [marketplace catalog](.agents/plugins/marketplace.json) is at the repository
 Alternatively, register Bitbucket directly without a local checkout:
 
 ```powershell
-codex plugin marketplace add "https://lnsvr0329.gcsd.harris.com:8443/bitbucket/scm/factr/factr-plugin.git"
+
 ```
 
 The Bitbucket routes use the repository's default branch. To use edits that have not been committed and pushed, register the existing local checkout. Choose the intended source for the `factr-marketplace` identity.
